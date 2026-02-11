@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q3 Seatwork 2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+body{ 
+    background-image:url(https://www.adobe.com/uk/express/learn/blog/media_13f8626e32f453ec22fc25afbbc0c6b40a1070781.jpg?width=750&format=jpg&optimize=medium) ;
+}
+</style>
+<!---Image source- https://www.adobe.com/uk/express/learn/blog/blue-background-->
+<body>
+    
+    <nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+    <a class="navbar-brand" href="#">Product Locator</a>
+    </div>
+    </nav>
+
+    <div class="container bg-primary text-light p-4 mt-5 w-50 text-center rounded">
+
+    <details>
+    <summary>Instructions:</summary>
+        <p id="Instruct" class="text-center"></p>
+         </details>
+
+    <script>
+        document.getElementById('Instruct').innerHTML = "Enter your budget to see recommended stores and any eligible discounts.";
+
+     
+
+            </script>
+
+    <h1 class="mb-3"> Discount Checker</h1>
+
+        <form>
+            <label for="budget">Enter your budget:</label>
+            <input type="number" id="budget" class="form-control mb-3" placeholder="Your budget" required>
+
+            <button type="button" class="btn btn-info mt-2" onclick="showStores()">Check Stores</button>
+
+        </form>
+
+        <p id="display" class="mt-3 text-warning"></p>
+
+        <div class="row">
+
+        <div class="col-lg">
+
+        <h4>Recommended Brands </h4>
+        <ul>
+         <li><strong>McDonalds</strong></li>
+        <li><strong>Jollibee</strong></li>
+        <li><strong>Burger King</strong></li>
+        </ul>
+    </div>
+
+  <div class="col-lg" id="locations-container">
+</div>
+
+</div>
+
+    <script>
+function showStores() {
+    var budget = Number(document.getElementById('budget').value);
+   
+    var discount = budget * 0.05; 
+    var discountedBudget = budget - discount; 
+
+    document.getElementById('display').innerHTML = 
+        "Based on your budget, after a 5% discount, you can spend: ₱ " + discountedBudget;
+
+   document.getElementById('locations-container').innerHTML = "<h4 id='Recommended-Locations'>Recommended Locations in Quezon City</h4><ul><li id='brand-mcdonalds'><strong>McDonalds</strong><ul><li>SM North EDSA</li><li>Gateway Mall, Araneta Center</li><li>UP Town Center</li></ul></li><li id='brand-jollibee'><strong>Jollibee</strong><ul><li>SM North EDSA</li><li>Gateway Mall, Araneta Center</li><li>UP Town Center</li></ul></li><li id='brand-burgerking'><strong>Burger King</strong><ul><li>SM North EDSA</li><li>Gateway Mall, Araneta Center</li><li>UP Town Center</li></ul></li></ul>";
+
+}
+</script>
+
+</body>
+</html>
